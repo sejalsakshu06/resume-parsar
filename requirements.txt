@@ -1,0 +1,4 @@
+streamlit
+spacy
+pdfminer.six
+python-docx
