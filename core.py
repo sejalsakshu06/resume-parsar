@@ -26,11 +26,21 @@ def parse_resume(file_path):
     sections = detect_sections(text)
     personal = extract_entities(text)
     skills = extract_skills(text)
-     # Clean and filter education (skips the 'Education' header line)
-    sections['education'] = [remove_contact_info(line) for line in sections['education'] 
-                             if line.strip().lower() != "education" and line.strip() != '']
-     # Clean contact info from education and experience
-    sections['education'] = [remove_contact_info(line) for line in sections['education']]
-    sections['experience'] = [remove_contact_info(line) for line in sections['experience']]
+    # Clean Education: Skips the "Education" header and empty lines
+    sections['education'] = [line for line in sections.get('education', [])
+                              if line.strip().lower() != 'education' and line.strip() != '']
+
+    # Clean Experience: Skips "Experience" header AND stops before "Key Projects"
+    refined_exp = []
+    for line in sections.get('experience', []):
+        clean_line = line.strip()
+        #Stop the loop entirely if we hit the Projects section
+        if "key projects" in clean_line.lower():
+            break
+        #Only add lines that aren;t the header or empty
+        if clean_line.lower() != 'experience' and clean_line != '':
+            refined_exp.append(remove_contact_info(line))
+
+            sections['experience'] = refined_exp
 
     return build_schema(personal, sections, skills)
