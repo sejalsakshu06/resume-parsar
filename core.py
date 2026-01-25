@@ -5,6 +5,14 @@ from segmentation.section_detector import detect_sections
 from ner_engine.extractor import extract_entities
 from skill_engine.skills import extract_skills
 from schema.resume_schema import build_schema
+def remove_contact_info(text):
+    import re
+    # Simple regex patterns for email and phone numbers
+    email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
+    phone_pattern = r'\+?\d[\d -]{8,}\d'
+    text = re.sub(email_pattern, '', text)
+    text = re.sub(phone_pattern, '', text)
+    return text.strip()
 
 def parse_resume(file_path):
     if file_path.endswith(".pdf"):
