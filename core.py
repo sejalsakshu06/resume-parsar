@@ -26,6 +26,9 @@ def parse_resume(file_path):
     sections = detect_sections(text)
     personal = extract_entities(text)
     skills = extract_skills(text)
+     # Clean and filter education (skips the 'Education' header line)
+    sections['education'] = [remove_contact_info(line) for line in sections['education'] 
+                             if line.strip().lower() != "education" and line.strip() != '']
      # Clean contact info from education and experience
     sections['education'] = [remove_contact_info(line) for line in sections['education']]
     sections['experience'] = [remove_contact_info(line) for line in sections['experience']]
