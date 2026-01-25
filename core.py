@@ -18,5 +18,8 @@ def parse_resume(file_path):
     sections = detect_sections(text)
     personal = extract_entities(text)
     skills = extract_skills(text)
+     # Clean contact info from education and experience
+    sections['education'] = [remove_contact_info(line) for line in sections['education']]
+    sections['experience'] = [remove_contact_info(line) for line in sections['experience']]
 
     return build_schema(personal, sections, skills)
