@@ -6,7 +6,7 @@ It converts unstructured resumes into structured JSON using hybrid NLP technique
 ## Project Structure
 
 ```
-SIC-25-26-TeamXXX/
+SIC-25-26-Team279
 ├── notebook/
 │   └── resume_analysis.ipynb          # Jupyter notebook for analysis
 ├── data/
