@@ -1,0 +1,23 @@
+{
+  "personal_info": {
+    "name": "Rahul Kumar",
+    "email": "rahulkumar2207@gmail.com",
+    "phone": "+918117244114"
+  },
+  "education": [
+    "IIT Kharagpur\nIntegrated Dual Degree (Btech+Mtech) - 9.2/10 | 2019 - 2024"
+  ],
+  "experience": [
+    "TechSolve Solutions\nSoftware Development Intern | July 2024 - Dec 2024\n- Developed a responsive web application using React.js and TailwindCSS, improving user engagement by 15%.\n- Collaborated with a team of 4 to implement a RESTful API using Node.js and Express, ensuring seamless data flow between the frontend and backend.\n- Optimized database queries in MongoDB, reducing query response time by 20%.\n- Integrated JWT-based authentication, securing user access for 500+ accounts."
+  ],
+  "projects": [
+    "TaskManager Pro | 2019 - 2020\n- Developed TaskManager Pro, a task management web application to streamline daily task organization and team collaboration."
+  ],
+  "achievements": [
+    "AIR 756 in JEE Advance 2019"
+  ],
+  "skills": [
+    "python", "java", "c++", "javascript", "react", "nodejs", "mongodb", "aws"
+  ]
+}
+

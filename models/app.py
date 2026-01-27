@@ -1,6 +1,15 @@
-import streamlit as st
+"""
+Streamlit web application for parsing resumes.
+"""
 import tempfile
-from core import parse_resume
+import streamlit as st
+import sys
+from pathlib import Path
+
+# Add parent directory to path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from models.core import parse_resume
 
 st.set_page_config(page_title="SIGMA-CV", layout="centered")
 st.title("Σ SIGMA-CV Resume Parser")
