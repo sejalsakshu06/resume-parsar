@@ -11,9 +11,6 @@ SIC-25-26-Team279
 │   └── resume_analysis.ipynb          # Jupyter notebook for analysis
 ├── data/
 │   └── sample_resume.json             # Sample parsed resume data
-├── submission_templates/
-│   ├── Idea_Submission_Form.doc       # Idea submission form placeholder
-│   └── Final_Presentation.pptx        # Final presentation placeholder
 ├── models/
 │   ├── app.py                         # Streamlit web application
 │   ├── core.py                        # Main parsing logic
