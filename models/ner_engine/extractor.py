@@ -148,6 +148,7 @@ def extract_name(text):
             return name_part, confidence
     
     # Strategy 3: Use NER to find PERSON entities in the first few lines
+    nlp = get_nlp()
     doc = nlp(text[:1500])
     for ent in doc.ents:
         if ent.label_ == "PERSON":
