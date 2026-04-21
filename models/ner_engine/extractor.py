@@ -11,8 +11,15 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from models.skill_engine.skills import SKILLS_DB, extract_skills
 
-nlp = spacy.load("en_core_web_sm")
+def get_nlp():
+    import spacy
+    import os
 
+    try:
+        return spacy.load("en_core_web_sm")
+    except:
+        os.system("python -m spacy download en_core_web_sm")
+        return spacy.load("en_core_web_sm")
 EMAIL_REGEX = r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
 # Updated phone regex to handle formats like:
 # +91-9812345678, +91 9812345678, 919812345678, 098123456789
